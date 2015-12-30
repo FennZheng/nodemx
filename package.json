@@ -1,0 +1,33 @@
+{
+	"name": "nodemx",
+	"version": "0.0.4",
+	"description": "Node Managerment Extensions",
+	"main": "index.js",
+	"engines": {
+		"node": "0.8.x"
+	},
+	"readmeFilename": "README.md",
+	"devDependencies": {
+		"mocha": "~1.10.0",
+		"coffee-script": "~1.6.1",
+		"should": "~0.6.3"
+	},
+	"dependencies": {
+	},
+	"scripts": {
+	},
+	"repository": {
+		"type": "git",
+		"url": "http://gitlib.funshion.com:8060/git/NodePackage.git"
+	},
+	"keywords": [
+		"manage",
+		"nodemx"
+	],
+	"author": "vernon",
+	"license": "BSD",
+	"directories": {
+		"example": "examples",
+		"test": "test"
+	}
+}
