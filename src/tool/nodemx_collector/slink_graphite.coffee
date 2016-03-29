@@ -1,13 +1,24 @@
 Dgram = require("dgram")
 StatsdConfig = require("./nodemx.json").statsdConfig
 
+formatIp = (ip)->
+	ip.replace(/\./g, "_")
+
 exports.buildSocketUsingCountPath = (ip, dspCode, count)->
-	ip = ip.replace(/\./g, "_")
+	ip = formatIp(ip)
 	"microlens.hermes.pub.hadn." + ip + ".third_party.dsp."+dspCode+".http_agent.connection.using"+":"+count+"|g"
 
 exports.buildSocketFreeCountPath = (ip, dspCode, count)->
-	ip = ip.replace(/\./g, "_")
+	ip = formatIp(ip)
 	"microlens.hermes.pub.hadn." + ip + ".third_party.dsp."+dspCode+".http_agent.connection.idle"+":"+count+"|g"
+
+exports.buildCookieClientCmdCountPath = (ip, count)->
+	ip = formatIp(ip)
+	"microlens.hermes.pub.hadn." + ip + ".cookie_client.counters.cmd_count:"+count+"|g"
+
+exports.buildCookieClientCmdErrorCountPath = (ip, count)->
+	ip = formatIp(ip)
+	"microlens.hermes.pub.hadn." + ip + ".cookie_client.counters.cmd_error_count:"+count+"|g"
 
 exports.sendToGraphite = (data)->
 	socket = Dgram.createSocket("udp4")

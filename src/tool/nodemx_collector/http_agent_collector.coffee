@@ -2,7 +2,7 @@ Async = require("async")
 FetchClient = require("./fetch_client")
 FetchMBean = require("./fetch_mbean")
 SlinkGraphite = require("./slink_graphite")
-test = true
+test = false
 
 THIRD_PARTY_AD_HTTP_AGENT_NS = "ad.third_party_ad:http_agent"
 
