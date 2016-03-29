@@ -1,0 +1,15 @@
+{
+	"hadesHttpOption": {
+		"host": "127.0.0.1",
+		"port": 9011,
+		"path": "/data-ls?node-path=/hades/services/main/nodemx_ad",
+		"header":{
+		"Content-Type": "application/json"
+		},
+		"method": "GET"
+	},
+	"statsdConfig": {
+		"ip": "192.168.112.50",
+		"port": "8125"
+	}
+}
