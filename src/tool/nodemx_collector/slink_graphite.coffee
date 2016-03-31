@@ -20,6 +20,14 @@ exports.buildCookieClientCmdErrorCountPath = (ip, count)->
 	ip = formatIp(ip)
 	"microlens.hermes.pub.hadn." + ip + ".cookie_client.counters.cmd_error_count:"+count+"|g"
 
+exports.buildRedisClientCmdCountPath = (ip, count)->
+	ip = formatIp(ip)
+	"microlens.hermes.pub.hadn." + ip + ".redis_client.counters.cmd_count:"+count+"|g"
+
+exports.buildRedisClientCmdErrorCountPath = (ip, count)->
+	ip = formatIp(ip)
+	"microlens.hermes.pub.hadn." + ip + ".redis_client.counters.cmd_error_count:"+count+"|g"
+
 exports.sendToGraphite = (data)->
 	socket = Dgram.createSocket("udp4")
 	socket.bind(->
